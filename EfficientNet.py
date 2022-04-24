@@ -120,6 +120,9 @@ def main():
     elif args.dataset == 'flowers102':
         dataloader = datasets.Flowers102
         num_classes = 102
+    elif args.dataset == 'caltech101':
+        dataloader = datasets.Caltech101
+        num_classes = 101
 
 
     trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
