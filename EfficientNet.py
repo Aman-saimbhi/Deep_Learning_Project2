@@ -14,8 +14,8 @@ import torch.optim as optim
 import torch.utils.data as data
 import transforms
 import torchvision.datasets as datasets
-import models.cifar as models
-
+# import models.cifar as models
+import torchvision.models as models
 from utils import Bar, Logger, AverageMeter, accuracy, mkdir_p, savefig
 
 
