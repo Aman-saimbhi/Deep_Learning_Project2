@@ -76,7 +76,7 @@ args = parser.parse_args()
 state = {k: v for k, v in args._get_kwargs()}
 
 # Validate dataset
-assert args.dataset == 'cifar10' or args.dataset == 'cifar100', 'Dataset can only be cifar10 or cifar100.'
+# assert args.dataset == 'cifar10' or args.dataset == 'cifar100', 'Dataset can only be cifar10 or cifar100.'
 
 # Use CUDA
 use_cuda = torch.cuda.is_available()
@@ -117,9 +117,9 @@ def main():
     if args.dataset == 'cifar10':
         dataloader = datasets.CIFAR10
         num_classes = 10
-    else:
-        dataloader = datasets.CIFAR100
-        num_classes = 100
+    elif args.dataset == 'flowers102'
+        dataloader = datasets.Flowers102
+        num_classes = 102
 
 
     trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
