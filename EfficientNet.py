@@ -126,6 +126,9 @@ def main():
     elif args.dataset == 'mnist':
         dataloader = datasets.MNIST
         num_classes = 10
+    elif args.dataset == 'imagenet':
+        dataloader = datasets.ImageNet
+        num_classes = 1000
 
 
     trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
