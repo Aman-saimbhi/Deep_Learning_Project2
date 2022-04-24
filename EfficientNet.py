@@ -117,7 +117,7 @@ def main():
     if args.dataset == 'cifar10':
         dataloader = datasets.CIFAR10
         num_classes = 10
-    elif args.dataset == 'flowers102'
+    elif args.dataset == 'flowers102':
         dataloader = datasets.Flowers102
         num_classes = 102
 
