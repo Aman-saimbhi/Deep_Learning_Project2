@@ -162,7 +162,7 @@ def main():
     optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
 
     # Resume
-    title = 'cifar-10-' + args.arch
+    title = 'EfficientNetB4'
     if args.resume:
         # Load checkpoint.
         print('==> Resuming from checkpoint..')
