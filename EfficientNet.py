@@ -123,9 +123,12 @@ def main():
     elif args.dataset == 'caltech101':
         dataloader = datasets.Caltech101
         num_classes = 101
+    elif args.dataset == 'mnist':
+        dataloader = datasets.MNIST
+        num_classes = 10
 
 
-    trainset = dataloader(root='./data', download=True, transform=transform_train)
+    trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
     trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers)
 
     testset = dataloader(root='./data', train=False, download=False, transform=transform_test)
