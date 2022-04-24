@@ -143,7 +143,7 @@ def main():
                     depth=args.depth,
                 )
     elif args.arch.endswith('efficient'):
-        model = models.efficientnet_b0()
+        model = models.efficientnet_b4()
 
     model = torch.nn.DataParallel(model).cuda()
     cudnn.benchmark = True
