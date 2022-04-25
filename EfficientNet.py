@@ -152,7 +152,7 @@ def main():
                     depth=args.depth,
                 )
     elif args.arch.endswith('efficient'):
-        model = models.efficientnet_b1()
+        model = models.efficientnet_b0()
 
     model = torch.nn.DataParallel(model).cuda()
     cudnn.benchmark = True
@@ -162,7 +162,7 @@ def main():
     optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
 
     # Resume
-    title = 'EfficientNetB1'
+    title = 'EfficientNetB0'
     if args.resume:
         # Load checkpoint.
         print('==> Resuming from checkpoint..')
