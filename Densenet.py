@@ -157,6 +157,9 @@ def main():
     elif args.arch.endswith('inception'):
         model = models.inception_v3()
 
+    elif args.arch.endswith('densenet'):
+        model = models.densenet161()
+
     model = torch.nn.DataParallel(model).cuda()
     cudnn.benchmark = True
     print('    Total params: %.2fM' % (sum(p.numel() for p in model.parameters())/1000000.0))
@@ -165,7 +168,7 @@ def main():
     optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
 
     # Resume
-    title = 'InceptionV3'
+    title = 'DenseNet'
     if args.resume:
         # Load checkpoint.
         print('==> Resuming from checkpoint..')
