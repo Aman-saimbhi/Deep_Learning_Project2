@@ -155,7 +155,7 @@ def main():
         model = models.efficientnet_b0()
 
     elif args.arch.endswith('inception'):
-        model = models.inception_v3()
+        model = models.densenet161()
 
     model = torch.nn.DataParallel(model).cuda()
     cudnn.benchmark = True
